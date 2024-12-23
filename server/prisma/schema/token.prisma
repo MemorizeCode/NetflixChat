@@ -1,0 +1,8 @@
+model Token {
+    id Int @default(autoincrement()) @id
+    tokenRefresh String @db.VarChar(999)
+    tokenAccess String @db.VarChar(999)
+    user User @relation(fields: [userId], references: [id])
+    userId Int
+    createdAt DateTime @default(now())
+}

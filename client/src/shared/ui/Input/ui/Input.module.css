@@ -1,0 +1,20 @@
+.inputs {
+  border: none;
+  outline: none;
+  transition: all ease-in-out 0.3s;
+  border-radius: 4px;
+  background-color: rgb(55, 65, 81);
+  color: white;
+}
+.large {
+  padding: 12px;
+}
+.small {
+  padding: 5px;
+}
+.medium {
+  padding: 8px;
+}
+.inputs:focus {
+  border: 2px solid #9e61ff;
+}

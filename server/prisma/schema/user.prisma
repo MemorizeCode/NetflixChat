@@ -1,0 +1,27 @@
+model User {
+  id Int @default(autoincrement()) @id
+  login String @unique
+  password String
+  ip String?
+  country String?
+  city String?
+  role ROLES @default(USER)
+  premium Boolean @default(false)
+  premiumCountDay String @default("0")
+  premiumDateStart String @default("0")
+  premiumDateEnd String @default("0")
+  avatar String?
+  createdAt DateTime @default(now())
+  watchUs UserWatchFilm[]
+  rooms Room[]
+  msg Message[]
+  profile Profile?
+  tokens Token[]
+}
+
+
+enum ROLES {
+  USER
+  ADMIN
+  MODERATOR
+}

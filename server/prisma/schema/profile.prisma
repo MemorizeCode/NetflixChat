@@ -1,0 +1,8 @@
+model Profile {
+    id           Int     @id @default(autoincrement())
+    avatarBgShCl String? //Тень аватарки
+    maxLikeFilm Int @default(5)
+    clBgChMs String? //задний фон блока в чате сообщения
+    user   User @relation(fields: [userId], references: [id])
+    userId Int  @unique
+}
