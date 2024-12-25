@@ -1,7 +1,7 @@
 import frame from "@/assets/frame.png";
 import { LoginForm } from "@/features/LoginUser";
 import { Image } from "@/shared/ui/Image";
-import { Loader } from "@/shared/ui/Loader";
+import { Loader } from "@/widget/Loader";
 import { Suspense } from "react";
 import { useTranslation } from "react-i18next";
 

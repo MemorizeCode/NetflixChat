@@ -1,4 +1,5 @@
-import { isAuth, userActions } from "@/entities/User";
+import { ROLES } from "@/app/providers/router";
+import { isAuth, roleUser, userActions } from "@/entities/User";
 import { Button } from "@/shared/ui/Button";
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
@@ -14,6 +15,7 @@ const NavBar = memo(() => {
   }, []);
 
   const auth = useSelector(isAuth);
+  const role = useSelector(roleUser)
   const { t } = useTranslation();
   return (
     <div className={` flex items-center justify-between p-4 z-[100] w-full`}>
@@ -24,9 +26,13 @@ const NavBar = memo(() => {
         <div className="flex items-center">
           <div className="mr-5"></div>
         </div>
-
-
-        
+        {
+          role === ROLES.ADMIN && (
+            <Link to="/admin" className="mr-5">
+              <Button>{t("admin_panel")}</Button>
+            </Link>
+          )
+        }
         {auth ? (
           <div>
             <Link to="/profile">
@@ -49,10 +55,6 @@ const NavBar = memo(() => {
               </button>
             </Link>
             <Link to="/register">
-              {/* <button
-              className={` px-6 py-2 rounded cursor-pointer text-white transition ease-in-out delay-150 hover:bg-red-950 duration-300`}
-            >
-            </button> */}
               <Button>{t("register")}</Button>
             </Link>
           </div>

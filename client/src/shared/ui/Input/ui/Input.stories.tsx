@@ -15,6 +15,33 @@ export const Default: Story = {
     args: {
         value: 'Value',
         placeholder: 'Placeholder',
-        onChange: action('input-changed'),
+    }
+}
+
+export const Big: Story = {
+    args: {
+        placeholder: 'Placeholder',
+        size: "large"
+    }
+}
+
+export const Medium: Story = {
+    args: {
+        size: "medium",
+        placeholder: 'Placeholder',
+    }
+}
+
+export const Small: Story = {
+    args: {
+        size: "small",
+        placeholder: 'Placeholder',
+    }
+}
+
+export const AutoFocus: Story = {
+    args: {
+        autoFocus: true,
+        placeholder: 'Placeholder',
     }
 }

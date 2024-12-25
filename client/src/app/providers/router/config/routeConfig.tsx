@@ -17,6 +17,12 @@ export enum AppRoutes {
     NOT_FOUNDTWO = "not_found_two"
 }
 
+
+export enum ROLES {
+    ADMIN = "ADMIN",
+    USER = "USER"
+}
+
 export const RoutePath: Record<AppRoutes, string> = {
     [AppRoutes.MAIN]: "/",
     [AppRoutes.LOGIN]: "/login",
@@ -49,13 +55,13 @@ export const routeConfig: Record<AppRoutes, AppRoutesProps> = {
         path: RoutePath.admin,
         element: <AdminPage />,
         authOnly: true,
-        roles: ["ADMIN"],
+        roles: [ROLES.ADMIN],
     },
     [AppRoutes.PROFILE]: {
         path: RoutePath.profile,
         element: <ProfilePage />,
         authOnly: true,
-        roles: ["ADMIN", "USER"],
+        roles: [ROLES.ADMIN, ROLES.USER],
     },
     [AppRoutes.NOT_FOUND]: {
         path: RoutePath.not_found,

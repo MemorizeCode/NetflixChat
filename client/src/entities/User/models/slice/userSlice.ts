@@ -7,7 +7,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 const initialState: UserSchema = {
   auth: false,
   isLoading: false,
-  roles: [],
+  roles: '',
 };
 
 export const userSlice = createSlice({
@@ -18,17 +18,17 @@ export const userSlice = createSlice({
       state.auth = action.payload;
     },
     setRole: (state, action: PayloadAction<string>) => {
-      state.roles = [action.payload];
+      state.roles = action.payload;
     },
     setAuthData: (state, action) => {
       state.auth = true
-      state.roles = [action.payload.role];
+      state.roles = action.payload.role;
       localStorage.setItem(KEY_ACCESS, action.payload.accesToken);
       localStorage.setItem(KEY_REFRESH, action.payload.refreshToken);
     },
     setLogOut: (state) => {
       state.auth = false;
-      state.roles = [];
+      state.roles = '';
       localStorage.removeItem(KEY_ACCESS);
       localStorage.removeItem(KEY_REFRESH);
     }
@@ -40,7 +40,8 @@ export const userSlice = createSlice({
       })
       .addCase(fetchIsAuth.fulfilled, (state, action) => {
         state.isLoading = false;
-        state.auth = action.payload;
+        state.auth = true;
+        state.roles = action.payload.role;
       })
       .addCase(fetchIsAuth.rejected, (state) => {
         state.isLoading = false;

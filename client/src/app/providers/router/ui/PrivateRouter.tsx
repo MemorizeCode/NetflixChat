@@ -12,13 +12,6 @@ interface PrivateRouterProps {
 const PrivateRouter = (props: PrivateRouterProps) => {
   const { roles, children } = props;
 
-  //   const auth = useSelector((state: StateScema) => state?.user?.auth);
-  //   const isLoading = useSelector((state: StateScema) => state?.user?.isLoading);
-  //   const role = useSelector(
-  //     (state: StateScema) => state?.user?.roles
-  //   )[0]?.toLocaleLowerCase();
-
-
   const auth = useSelector(isAuth);
   const isLoading = useSelector(isLoadingUser);
   const role = useSelector(roleUser)

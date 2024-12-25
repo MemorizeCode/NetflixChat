@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import frame from "@/assets/frame.png"
 import {Image} from "@/shared/ui/Image";
 import { useTranslation } from "react-i18next";
-import { Loader } from "@/shared/ui/Loader";
+import { Loader } from "@/widget/Loader";
 const RegisterPage = () => {
 
     console.log("@registerPage")

@@ -11,7 +11,7 @@ export const fetchIsAuth:any = createAsyncThunk(
         })
 
         if(response.status === 200){
-            return true;
+            return response.data
         }
         return false; 
 

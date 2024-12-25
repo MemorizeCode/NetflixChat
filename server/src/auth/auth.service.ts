@@ -18,7 +18,7 @@ export class AuthService {
     async register(body: RegisterDTO) {
         const user = await this.prisma.user.findUnique({
             where: {
-                login: body.login,
+                login: body.login
             }
         })
 
@@ -28,7 +28,7 @@ export class AuthService {
                     login: body.login,
                     password: await bcrypt.hash(body.password, 10),
                 }
-            })
+            }) 
             if (newUser) {
                 await this.prisma.profile.create({
                     data: {

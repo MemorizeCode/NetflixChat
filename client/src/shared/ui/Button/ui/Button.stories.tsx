@@ -15,3 +15,10 @@ export const Default: Story = {
     children: 'Button',
   },
 };
+
+export const Loading: Story = {
+  args: {
+    children: 'Button',
+    isLoading: true
+  },
+};
