@@ -1,5 +1,6 @@
 import { ROLES } from "@/app/providers/router";
 import { isAuth, roleUser, userActions } from "@/entities/User";
+import { LanguageSwitcher } from "@/features/LanguageSwitcher";
 import { Button } from "@/shared/ui/Button";
 import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
@@ -24,7 +25,9 @@ const NavBar = memo(() => {
       </Link>
       <div className="flex items-center">
         <div className="flex items-center">
-          <div className="mr-5"></div>
+          <div className="mr-5">
+            <LanguageSwitcher />
+          </div>
         </div>
         {
           role === ROLES.ADMIN && (

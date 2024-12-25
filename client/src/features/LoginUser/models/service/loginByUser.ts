@@ -38,7 +38,7 @@ export const fetchLoginUser: any = createAsyncThunk(
     }
     
     catch(e){
-      return thunkAPI.rejectWithValue(`Error: ${e}`)
+      return thunkAPI.rejectWithValue(`Сервер не отвечает`)
     }
   }
 );

@@ -8,8 +8,8 @@ import { FormEvent, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { getLoginStateLogin } from "../models/selectors/getLoginStateLogin";
-import { getLoginStatePassword } from "../models/selectors/getLoginStatePassword";
+import { getLoginStateLogin } from "../models/selectors/getLoginState/getLoginStateLogin";
+import { getLoginStatePassword } from "../models/selectors/getPasswordState/getLoginStatePassword";
 import { fetchLoginUser } from "../models/service/loginByUser";
 import { loginUserActions, loginUserSliceReducer } from "../models/slice/loginUserSlice";
 

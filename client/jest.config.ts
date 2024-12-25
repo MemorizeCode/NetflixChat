@@ -1,5 +1,5 @@
 import type { Config } from 'jest';
-
+const path = require('path');
 const config: Config = {
   preset: 'ts-jest',
   testEnvironment: 'jsdom',
@@ -16,7 +16,8 @@ const config: Config = {
   // Маппинг модулей
   moduleNameMapper: {
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
-    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/src/mocks/fileMock.js'
+    '\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$': '<rootDir>/src/mocks/fileMock.js',
+    '^@/(.*)$': path.resolve(__dirname, './src/$1'),
   },
 
   // Директории и расширения

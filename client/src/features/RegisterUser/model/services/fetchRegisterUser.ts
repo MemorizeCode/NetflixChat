@@ -35,7 +35,8 @@ export const fetchRegister:any = createAsyncThunk(
         return thunkAPI.rejectWithValue("Неизвестная ошибка");
       }
     } catch (e) {
-      return thunkAPI.rejectWithValue(`Error: ${e}`);
+      return thunkAPI.rejectWithValue(`Сервер не отвечает`)
+
     }
   }
 );

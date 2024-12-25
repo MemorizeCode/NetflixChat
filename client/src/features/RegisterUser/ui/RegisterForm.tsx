@@ -7,13 +7,13 @@ import { registerUserActions, registerUserReducer } from "../model/slice/registe
 import { fetchRegister } from "../model/services/fetchRegisterUser";
 import { RoutePath } from "@/app/providers/router/config/routeConfig";
 import { useDispatch, useSelector } from "react-redux";
-import { getLoadingState } from "../model/selectors/getLoadingState";
-import { getRegisterStateLogin } from "../model/selectors/getRegisterStateLogin";
-import { getRegisterStatePassword } from "../model/selectors/getRegisterStatePassword";
-import { getRegisterStateRP } from "../model/selectors/getRegisterStateRP";
+import { getLoadingState } from "../model/selectors/getLoadingState/getLoadingState";
+import { getRegisterStateLogin } from "../model/selectors/getRegisterLoginState/getRegisterStateLogin";
+import { getRegisterStatePassword } from "../model/selectors/getRegisterPasswordState/getRegisterStatePassword";
+import { getRegisterStateRP } from "../model/selectors/getRegisterRepPasswordState/getRegisterStateRP";
 import { Button } from "@/shared/ui/Button";
 import { useTranslation } from "react-i18next";
-import { getErrorsState } from "../model/selectors/getErrorsState";
+import { getErrorsState } from "../model/selectors/getErrorState/getErrorsState";
 
 
 const RegisterForm = memo(() => {
