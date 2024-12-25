@@ -6,7 +6,7 @@ import axios from "axios";
 export const fetchIsAuth:any = createAsyncThunk(
     "isAuth",
     async () => {
-        const response = await axios.post(`${import.meta.env.VITE_BACKEND_API}/auth/refresh`,{
+        const response = await axios.post(`${import.meta.env.VITE_BACKEND_API}auth/refresh`,{
             token: localStorage.getItem(KEY_REFRESH),
         })
 

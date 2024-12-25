@@ -11,9 +11,9 @@ import { getLoadingState } from "../model/selectors/getLoadingState";
 import { getRegisterStateLogin } from "../model/selectors/getRegisterStateLogin";
 import { getRegisterStatePassword } from "../model/selectors/getRegisterStatePassword";
 import { getRegisterStateRP } from "../model/selectors/getRegisterStateRP";
-// import { getErrorsState } from "../model/selectors/getErrorsState";
 import { Button } from "@/shared/ui/Button";
 import { useTranslation } from "react-i18next";
+import { getErrorsState } from "../model/selectors/getErrorsState";
 
 
 const RegisterForm = memo(() => {
@@ -24,7 +24,7 @@ const RegisterForm = memo(() => {
   const login = useSelector(getRegisterStateLogin);
   const password = useSelector(getRegisterStatePassword);
   const repeat_password = useSelector(getRegisterStateRP);
-  // const error = useSelector(getErrorsState);
+  const error = useSelector(getErrorsState);
 
   const onChangeLogin = useCallback(
     (e: string) => {
@@ -100,7 +100,9 @@ const RegisterForm = memo(() => {
         >
           Регистрация
         </Button>
-
+      {
+        error && <p className="text-red-600">{error}</p>
+      }
         <p className="py-8">
           <span className="text-gray-600">Нет акааунта?</span>
           <Link to="/login">Логин</Link>

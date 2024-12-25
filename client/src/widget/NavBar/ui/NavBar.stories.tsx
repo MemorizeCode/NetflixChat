@@ -3,6 +3,7 @@ import NavBar from "./NavBar";
 import type { Meta, StoryObj } from '@storybook/react'
 import { RouterDecorator } from "@/shared/config/storybook/RouterDecorator";
 import { ROLES } from "@/app/providers/router";
+import { LanguageDecorator } from "@/shared/config/storybook/LanguageDecorator";
 
 const meta: Meta<typeof NavBar> = {
     title: 'widget/NavBar',
@@ -13,7 +14,8 @@ const meta: Meta<typeof NavBar> = {
                 <Story/>
             </StoreDecorator>
         ),
-        RouterDecorator
+        RouterDecorator,
+        LanguageDecorator
     ]
 }
 

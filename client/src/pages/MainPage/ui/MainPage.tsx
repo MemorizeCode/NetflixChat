@@ -1,5 +1,10 @@
+import { Toast } from "@/shared/ui/Toast";
+
+
 const MainPage = () => {
-    return (<><h2 className="text-white">Main Page</h2></>);
+    return (<>
+        <Toast text="Success text" type="success"/>
+    </>);
 }
  
 export default MainPage;

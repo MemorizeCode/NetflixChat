@@ -25,10 +25,16 @@ export const fetchLoginUser: any = createAsyncThunk(
         return thunkAPI.dispatch(userActions.setAuthData(response.data))
       }
       
+      //re
       if(response.status === 401){
         return thunkAPI.rejectWithValue(response.data.message)
       }
-      return response.data
+
+      if(response.status === 400){
+        return thunkAPI.rejectWithValue(response.data.message)
+      }
+      
+      return thunkAPI.rejectWithValue("Неизвестная ошибка");
     }
     
     catch(e){

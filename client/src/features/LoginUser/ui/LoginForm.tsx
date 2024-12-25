@@ -1,5 +1,5 @@
 import { RoutePath } from "@/app/providers/router/config/routeConfig";
-import { getLoadingState } from "@/features/LoginUser";
+import { getErroState, getLoadingState } from "@/features/LoginUser";
 import { Button } from "@/shared/ui/Button";
 import { DynamicLoader } from "@/shared/ui/DynamicLoader";
 import { ReducersList } from "@/shared/ui/DynamicLoader/ui/DynamicLoader";
@@ -25,7 +25,7 @@ const LoginForm = () => {
     const navigate = useNavigate();
     const login = useSelector(getLoginStateLogin);
     const password = useSelector(getLoginStatePassword);
-    // const erros = useSelector(getErrosLogin);
+    const erros = useSelector(getErroState);
     const isLoading = useSelector(getLoadingState);
   
     const onChangeLogin = useCallback(
@@ -79,6 +79,9 @@ const LoginForm = () => {
         >
           {t("login")}
         </Button>
+        {
+          erros && <p className="text-red-600">{erros}</p>
+        }
         <p className="py-8">
           <span className="text-gray-600">{t("haveAcc")}</span>
           <Link to="/register">{t("register")}</Link>

@@ -9,9 +9,9 @@ export { loginUserActions, loginUserSlice, loginUserSliceReducer };
 import { LoginForm } from "./ui/LoginForm.async";
 export { LoginForm };
 
-import { getErrosLogin } from "./models/selectors/getErrosLogin";
+import { getErroState} from "./models/selectors/getErroState";
 import { getLoadingState } from "./models/selectors/getLoadingState";
 import { getLoginStateLogin } from "./models/selectors/getLoginStateLogin";
 import { getLoginStatePassword } from "./models/selectors/getLoginStatePassword";
 
-export { getErrosLogin, getLoadingState, getLoginStateLogin, getLoginStatePassword };
+export { getErroState, getLoadingState, getLoginStateLogin, getLoginStatePassword };

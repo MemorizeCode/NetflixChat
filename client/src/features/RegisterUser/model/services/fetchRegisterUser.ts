@@ -23,19 +23,19 @@ export const fetchRegister:any = createAsyncThunk(
         if(response.status === 200) {
           return response.data
         }
-
+        //re
         if(response.status === 401) {
           return thunkAPI.rejectWithValue(response.data.message)
         }
 
-        if(response.status === 401) {
+        if(response.status === 400) {
           return thunkAPI.rejectWithValue(response.data.message)
         }
+
         return thunkAPI.rejectWithValue("Неизвестная ошибка");
       }
     } catch (e) {
-      console.log(e);
-      return thunkAPI.rejectWithValue("Сервер не отвечает");
+      return thunkAPI.rejectWithValue(`Error: ${e}`);
     }
   }
 );
