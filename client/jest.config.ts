@@ -9,8 +9,9 @@ const config: Config = {
   
   // Настройки трансформации
   transform: {
-    '^.+\\.tsx?$': 'ts-jest',
-    '.+\\.(css|styl|less|sass|scss)$': 'jest-css-modules-transform'
+    '.+\\.(css|styl|less|sass|scss)$': 'jest-css-modules-transform',
+    "^.+\\.(ts|tsx)$": "ts-jest",
+    "^.+\\.(js|jsx)$": "babel-jest",
   },
 
   // Маппинг модулей

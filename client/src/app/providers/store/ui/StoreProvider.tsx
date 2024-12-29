@@ -14,6 +14,8 @@ export const StoreProvider = ({children}:ReduxStoreProps) => {
 
     const store = createReduxStore()
 
+    console.log("STORE")
+
     return (
         <Provider store={store}>
             {children}

@@ -237,5 +237,22 @@ export class MovieService {
         }
     }
 
+    async getMainMoive(){
+        const movies = await this.prisma.film.findMany({
+            take: 1
+        })
+        if(movies){
+            return movies[0]
+        }
+        return "фильмо нема брат("
+    }
 
+    async getMovieByIdTo(id){
+        const movie = await this.prisma.film.findUnique({
+            where:{
+                id: Number(id)
+            }
+        })
+        return movie
+    }
 }

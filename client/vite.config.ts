@@ -3,6 +3,7 @@ import react from '@vitejs/plugin-react-swc'
 import * as path from "path";
 import compression from "vite-plugin-compression";
 import { ViteImageOptimizer } from "vite-plugin-image-optimizer";
+import EnvironmentPlugin from 'vite-plugin-environment';
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(),
@@ -27,10 +28,10 @@ export default defineConfig({
     chunkSizeWarningLimit: 1024,
     rollupOptions: {
       output: {
-        chunkFileNames: "[name].[hash].js", // Общее имя для чанков
-        entryFileNames: "[name].[hash].js", // Общее имя для точек входа
+        chunkFileNames: "[name].[hash].js", 
+        entryFileNames: "[name].[hash].js", 
         manualChunks: {
-          vendor: ["react", "react-dom", "react-router-dom"], // Включите сюда внешние библиотеки
+          vendor: ["react", "react-dom", "react-router-dom"], 
         },
       },
     },

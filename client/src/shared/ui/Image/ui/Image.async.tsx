@@ -1,4 +1,4 @@
-import { lazy } from "react";
+import { FC, lazy } from "react";
+import { ImageProps } from "./Image";
 
-//так делать низя но для теста можно
-export const Image = lazy(() =>import("./Image"))
+export const Image = lazy<FC<ImageProps>>(() =>import("./Image"))

@@ -1,10 +1,10 @@
 {
   "compilerOptions": {
     "outDir": "./dist/",
-    "types": ["@types/react"],
+    "types": ["@types/react" , "node"],
     "noImplicitAny": true,
-    "module": "ESNext",
-    "target": "es6",
+    "module": "esnext",
+    "target": "es2020",
     "jsx": "react-jsx",
     "allowJs": true,
     "strict": true,
@@ -17,10 +17,10 @@
     "allowSyntheticDefaultImports": true,
     "isolatedModules": true
 },
-"ts-node": {
-    "compilerOptions": {
-        "module": "CommonJS"
-    }
-},
+// "ts-node": {
+//     "compilerOptions": {
+//         "module": "CommonJS"
+//     }
+// },
   "include": ["src", "jest.config.ts", "jest/setupTests.ts", "src/**/*.tsx", "test/**/*.ts"]
 }

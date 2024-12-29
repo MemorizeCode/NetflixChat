@@ -9,7 +9,7 @@ export const fetchIsAuth:any = createAsyncThunk(
         const response = await axios.post(`${import.meta.env.VITE_BACKEND_API}auth/refresh`,{
             token: localStorage.getItem(KEY_REFRESH),
         })
-
+        console.log(response)
         if(response.status === 200){
             return response.data
         }

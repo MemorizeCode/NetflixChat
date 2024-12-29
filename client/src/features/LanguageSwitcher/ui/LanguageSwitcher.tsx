@@ -2,7 +2,7 @@ import { FC } from "react";
 import { useTranslation } from "react-i18next";
 interface LanguageSwitcherProps {};
 
-const LanguageSwitcher: FC<LanguageSwitcherProps> = (props) => {
+const LanguageSwitcher: FC<LanguageSwitcherProps> = () => {
 
     const { i18n } = useTranslation()
 

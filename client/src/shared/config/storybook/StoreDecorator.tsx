@@ -19,7 +19,7 @@ export const StoreDecorator = ({ children, mockState }: MockStoreProps & { child
         user: {},
     }
 
-    const store = createStore(rootReducer, initialState as any)
+    const store = createStore(rootReducer, initialState as RootState)
 
     return (
         <Provider store={store}>

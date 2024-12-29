@@ -45,6 +45,7 @@ export default tseslint.config(
       "no-useless-return": "error", // Запрещает ненужные операторы return.
       "no-var": "error", // Запрещает объявления var (предпочитаются let или const).
       "require-await": "error", // Рекомендует использовать await в асинхронных функциях.
+      "@typescript-eslint/no-unused-vars":"off" //Пока отключаю (предупреждение о неиспользуемых переменных)
     },
   },
 )

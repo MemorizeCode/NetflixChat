@@ -6,14 +6,13 @@ import { memo, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-
+import styles from './NavBar.module.css'
 const NavBar = memo(() => {
-  console.log("@navbar");
   const dispatch = useDispatch()
-
   const handleLogout = useCallback(() => {
+    
     dispatch(userActions.setLogOut())
-  }, []);
+  }, [dispatch]);
 
   const auth = useSelector(isAuth);
   const role = useSelector(roleUser)
@@ -21,7 +20,7 @@ const NavBar = memo(() => {
   return (
     <div className={` flex items-center justify-between p-4 z-[100] w-full`}>
       <Link to="/">
-        <h1 className="text-white text-4xl font-bold cursor-pointer">Hooli</h1>
+        <h1 className={`text-4xl font-bold cursor-pointer ${styles.logo}`}>Hooli</h1>
       </Link>
       <div className="flex items-center">
         <div className="flex items-center">

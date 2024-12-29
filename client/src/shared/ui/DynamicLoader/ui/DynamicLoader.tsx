@@ -19,12 +19,14 @@ const DynamicLoader = ({initialReducers, children, unmount}:DynamicLoaderProps) 
 
     useEffect(()=>{
         Object.entries(initialReducers).forEach(([name, reducer]) => {
+            console.log("@MOUNT: ", name)
             store.reducerManager.add(name as StateSchemaKey, reducer)
         })
-
+        
         return () => {
             if(unmount){
                 Object.entries(initialReducers).forEach(([name]) => {
+                    console.log("@UNMOUNT: ", name)
                     store.reducerManager.remove(name as StateSchemaKey)
                 })
             }

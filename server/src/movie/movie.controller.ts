@@ -1,15 +1,20 @@
 import { Body, Controller, Get, HttpCode, Param, Post, Query, Req,Res  } from '@nestjs/common';
 import { MovieService } from './movie.service';
-import {Response} from 'express';
+import e, {Response} from 'express';
 import { join } from 'path';
 @Controller('/api/movie')
 export class MovieController {
-  constructor(private readonly movieService: MovieService) {
-
+  constructor(private readonly movieService: MovieService) {}
+  
+  @Get("/getMainMovie")
+  @HttpCode(200)
+  async getMainMoive(){
+    const result = await this.movieService.getMainMoive()
+    return result
   }
-    //мои видео
 
   @Get("/getWatchVideo")
+  @HttpCode(200)
   async getWatchVideo(@Req() req, @Query() query){
     const {id} = req.user
     const result = await this.movieService.getWatchVideo(id,query)
@@ -70,6 +75,14 @@ export class MovieController {
   async createWatchFilm(@Body() body, @Req() req){
     const {id} = req.user
     const result = await this.movieService.createWatchFilm(body,id)
+    return result;
+  }
+
+  @Get("/getMovieById/:id")
+  @HttpCode(200)
+  async getMovieById(@Param() param){
+    const {id} = param
+    const result = await this.movieService.getMovieByIdTo(id)
     return result;
   }
 }

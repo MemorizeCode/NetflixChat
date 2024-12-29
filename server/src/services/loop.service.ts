@@ -8,7 +8,7 @@ export class LoopService {
     async startLoop() {
         setInterval( async ()=>{
             const r = await this.prisma.profile.findMany()
-            // console.log(r)
+            console.log(r)
         },60000)
     }
 }

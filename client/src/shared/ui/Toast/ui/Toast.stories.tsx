@@ -43,3 +43,11 @@ export const Unmount3sec: Story = {
         unmount:true
     }
 }
+
+export const Mount: Story = {
+    args: {
+        text:"Danger text",
+        type: "danger",
+        unmount: false
+    }
+}

@@ -1,5 +1,8 @@
 
+import { CurrentMovieSchema } from "@/entities/CurrentMovie";
+import { MainMovieSchema } from "@/entities/MainMovie";
 import { UserSchema } from "@/entities/User";
+import { CreateRoomSchema } from "@/features/CreateRoom";
 import { LoginUserSchema } from "@/features/LoginUser";
 import { RegisterUserSchema } from "@/features/RegisterUser";
 import {
@@ -17,6 +20,9 @@ export interface StateScema {
   //async
   registerUser?: RegisterUserSchema
   loginUser?: LoginUserSchema
+  mainMovie?: MainMovieSchema
+  currentMovie?: CurrentMovieSchema
+  createRoom?: CreateRoomSchema
 }
 
 export interface ReducerManager {

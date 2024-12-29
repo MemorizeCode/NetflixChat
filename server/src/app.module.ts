@@ -6,9 +6,15 @@ import { AuthMiddleware } from './middleware/auth.middleware';
 import { MovieModule } from './movie/movie.module';
 import { ProfileModule } from './profile/profile.module';
 import { AdminModule } from './admin/admin.module';
+import { ServeStaticModule } from '@nestjs/serve-static';
+import { join } from 'path';
 
 @Module({
-  imports: [AuthModule, MovieModule, ProfileModule, AdminModule],
+  imports: [
+    ServeStaticModule.forRoot({
+      rootPath: join(__dirname, '..', '/uploads', '..'),
+    }),
+    AuthModule, MovieModule, ProfileModule, AdminModule],
   controllers: [AppController],
   providers: [AppService],
 })

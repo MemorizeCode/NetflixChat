@@ -4,10 +4,11 @@ import { useNavigate } from "react-router-dom";
 import styles from "./NotFound.module.css";
 import { Button } from "@/shared/ui/Button";
 const NotFoundPage = () => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
-  console.log(i18n.language);
-  const navigate = useNavigate();
+
+  // const navigate = useNavigate();
+  const back = useNavigate();
   return (
     <>
       <div className={`${styles.block}`}>
@@ -17,7 +18,7 @@ const NotFoundPage = () => {
         </h2>
         <Button
           className="text-center mt-14"
-          onClick={() => navigate("/")}
+          onClick={() => back(-1)}
         >
           Back
         </Button>

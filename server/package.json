@@ -28,6 +28,7 @@
     "@nestjs/platform-fastify": "^10.4.11",
     "@nestjs/platform-socket.io": "^10.4.5",
     "@nestjs/platform-ws": "^10.4.5",
+    "@nestjs/serve-static": "^4.0.2",
     "@nestjs/websockets": "^10.4.5",
     "@prisma/client": "^5.17.0",
     "bcrypt": "^5.1.1",

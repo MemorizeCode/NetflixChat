@@ -31,7 +31,7 @@ const PrivateRouter = (props: PrivateRouterProps) => {
   }
 
   if (!auth) {
-    return <Navigate to={RoutePath.main} replace />;
+    return <Navigate to={RoutePath.login} replace />;
   }
 
   if (!hasRole) {

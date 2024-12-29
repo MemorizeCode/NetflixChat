@@ -20,6 +20,8 @@ export default async (layer, name) => {
         await fs.writeFile(path.resolve(url, layer, name, 'models', 'types', `${name}Schema.ts`), "")
 
         await fs.mkdir(path.resolve(url, layer, name, 'models', 'service'))
+        await fs.writeFile(path.resolve(url, layer, name, 'models', 'service', `fetch${name}.ts`), "")
+        
         await fs.mkdir(path.resolve(url, layer, name, 'models', 'selectors'))
 
 
