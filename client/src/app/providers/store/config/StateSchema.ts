@@ -1,6 +1,7 @@
 
 import { CurrentMovieSchema } from "@/entities/CurrentMovie";
 import { MainMovieSchema } from "@/entities/MainMovie";
+import { MessageSchema } from "@/entities/RoomMessage";
 import { UserSchema } from "@/entities/User";
 import { CreateRoomSchema } from "@/features/CreateRoom";
 import { LoginUserSchema } from "@/features/LoginUser";
@@ -23,6 +24,7 @@ export interface StateScema {
   mainMovie?: MainMovieSchema
   currentMovie?: CurrentMovieSchema
   createRoom?: CreateRoomSchema
+  messageRoom?:MessageSchema
 }
 
 export interface ReducerManager {

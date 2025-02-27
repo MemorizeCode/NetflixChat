@@ -9,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "generateSlice": "node ./scripts/createSlice/index.js",
-    "test": "jest",
+    "unit": "jest",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
   },

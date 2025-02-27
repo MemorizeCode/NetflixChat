@@ -17,14 +17,17 @@ const CreateRoom = () => {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const randomUrlRoom = useSelector(getIdCreateRoom)
-    console.log(randomUrlRoom)
+
+
     useEffect(()=>{
         dispatch(fetchCreateRoom(id))
     },[])
 
-    if(randomUrlRoom){
-        navigate(`/room/${randomUrlRoom}`)
-    }
+    useEffect(()=>{
+        if(randomUrlRoom){
+            navigate(`/room/${randomUrlRoom}`)
+        }
+    },[randomUrlRoom])
 
     return (
         <div>

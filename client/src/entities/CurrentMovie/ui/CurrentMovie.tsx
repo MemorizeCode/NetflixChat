@@ -3,7 +3,7 @@ import { DynamicLoader } from "@/shared/ui/DynamicLoader";
 import { ReducersList } from "@/shared/ui/DynamicLoader/ui/DynamicLoader";
 import { ImageAsync } from "@/widget/Image";
 import { Raiting } from "@/widget/Raiting";
-import { Suspense, useEffect } from "react";
+import { memo, Suspense, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { currentmovieReducer } from "../models/slice/currentmovieSlice";
 import { fetchCurrentMovie } from "../models/service/fetchCurrentMovie";
@@ -13,7 +13,7 @@ import { valueTransform } from "@/shared/lib/valueTransform/valueTransform";
 
 
 
-const CurrentMovie = () => {
+const CurrentMovie = memo(() => {
     const {id} = useParams()
 
     const dispatch = useDispatch()
@@ -35,7 +35,6 @@ const CurrentMovie = () => {
     const isLoading = useSelector(getIsLoading)
 
     const transformValue = valueTransform(valueMovie)
-    
     return (
         <Suspense fallback={"Loading data..."} >
             <DynamicLoader initialReducers={initialReducers} unmount>
@@ -80,6 +79,6 @@ const CurrentMovie = () => {
             </DynamicLoader>
         </Suspense>
     );
-};
+})
 
 export default CurrentMovie;

@@ -8,3 +8,4 @@ export const getAvatarCurrentMovie = (state: StateScema) => state.currentMovie?.
 export const getDateCurrentMovie = (state: StateScema) => state.currentMovie?.date
 export const getRaitingCurrentMovie = (state: StateScema) => state.currentMovie?.raiting
 export const getIsLoading = (state: StateScema) => state.currentMovie?.isLoading
+

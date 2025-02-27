@@ -1,5 +1,5 @@
 import { CurrentMovieAsync, currentmovieReducer, fetchCurrentMovie } from "@/entities/CurrentMovie";
-import { SimilarMoviesAsync } from "@/entities/SimilarMovies/ui/SimilarMovies.async";
+
 import { Button } from "@/shared/ui/Button";
 import { DynamicLoader } from "@/shared/ui/DynamicLoader";
 import { ReducersList } from "@/shared/ui/DynamicLoader/ui/DynamicLoader";

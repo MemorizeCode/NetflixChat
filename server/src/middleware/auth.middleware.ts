@@ -22,12 +22,10 @@ export class AuthMiddleware implements NestMiddleware {
         next();
       }
       else{
-        // throw new UnauthorizedException('Token is invalid');
-        // console.log('Token is invalid')
         throw new UnauthorizedException('Token is invalid');
       }
     } catch (error) {
-      // console.log(error);
+
       throw new UnauthorizedException('Error verifying token: ', error);
     }
   }
